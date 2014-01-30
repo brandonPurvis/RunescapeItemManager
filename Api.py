@@ -1,8 +1,7 @@
 # API
 import urllib2
 import json
-from Item import Item
-
+import Item
 class Api:
     base_api = "http://services.runescape.com/m=itemdb_rs/api/catalogue/"
     item_api = "detail.json?item={i}"
@@ -38,7 +37,7 @@ class Api:
         item = response_json['item']
         item_id = item['id']
         item_name = item['name']
-        new_item = Item(int(item_id),item_name)
+        new_item = Item.Item(int(item_id),item_name)
         return new_item
         
     def getItemPrice(self, id_):
@@ -60,11 +59,11 @@ class Api:
         for item_json in items_json:
             item_id = item_json['id']
             item_name = item_json['name']
-            new_item = Item(int(item_id),item_name)
+            new_item = Item.Item(int(item_id),item_name)
             items.append(new_item)
         return items
 
-    def getAlchemy(self):
+    def getAlchemy(self, id_):
         pass
 
 if __name__ == "__main__":

@@ -34,6 +34,10 @@ class ItemListBox(tk.Frame):
     def get(self):
         indexes = map(int,self.list_box.curselection())
         return [self.item_list[i] for i in indexes]
+
+    def clearAll(self):
+        self.item_list = []
+        self.update()
     
 if __name__ == "__main__":
     root = tk.Tk()
