@@ -3,7 +3,7 @@
 import Tkinter as tk
 
 class ItemEntry(tk.Frame):
-    def __init__(self, root):
+    def __init__(self, root, *args):
         self.lastCheck = ""
         self.textVar = tk.StringVar()
         self.entry = tk.Entry(root, textvariable=self.textVar)
@@ -22,7 +22,8 @@ class ItemEntry(tk.Frame):
         else:
             return True
 
-
+    
+    
 if __name__ == "__main__":
     root = tk.Tk()
     app = ItemEntry(root)
